@@ -20,8 +20,8 @@ public class App {
         try {
             session.beginTransaction();
 
-            Passport passport = session.get(Passport.class, 1);
-            System.out.println(passport.getPerson().getName());
+            Person person = session.get(Person.class, 1);
+            person.getPassport().setPassportNumber(77777);
 
             session.getTransaction().commit();
         } finally {
